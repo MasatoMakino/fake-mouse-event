@@ -13,4 +13,3 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./FakeMouseEvent"), exports);
 __exportStar(require("./FakeMouseEventInit"), exports);
 __exportStar(require("./Generator"), exports);
-//# sourceMappingURL=index.js.map

@@ -18,4 +18,3 @@ function getMouseEvent(type, values) {
     return e;
 }
 exports.getMouseEvent = getMouseEvent;
-//# sourceMappingURL=Generator.js.map

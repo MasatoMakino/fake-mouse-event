@@ -21,4 +21,3 @@ class FakeMouseEvent extends MouseEventMock {
     }
 }
 exports.FakeMouseEvent = FakeMouseEvent;
-//# sourceMappingURL=FakeMouseEvent.js.map
