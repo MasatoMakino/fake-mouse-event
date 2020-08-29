@@ -1,9 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FakeMouseEvent = void 0;
-class FakeMouseEvent extends MouseEvent {
-    constructor(type, values) {
-        super(type, values);
+class MouseEventMock extends UIEvent {
+    constructor(type, eventInitDict) {
+        super(type, eventInitDict);
+    }
+    getModifierState(keyArg) {
+        return false;
+    }
+    initMouseEvent(typeArg, canBubbleArg, cancelableArg, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg) { }
+}
+class FakeMouseEvent extends MouseEventMock {
+    init(values) {
         this.offsetX = values.offsetX;
         this.offsetY = values.offsetY;
         this.pageX = values.pageX;

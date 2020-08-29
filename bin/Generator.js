@@ -13,7 +13,9 @@ function getMouseEvent(type, values) {
     (_f = values.pageY) !== null && _f !== void 0 ? _f : (values.pageY = 0);
     (_g = values.x) !== null && _g !== void 0 ? _g : (values.x = 0);
     (_h = values.y) !== null && _h !== void 0 ? _h : (values.y = 0);
-    return new FakeMouseEvent_1.FakeMouseEvent(type, values);
+    const e = new FakeMouseEvent_1.FakeMouseEvent(type, values);
+    e.init(values);
+    return e;
 }
 exports.getMouseEvent = getMouseEvent;
 //# sourceMappingURL=Generator.js.map
