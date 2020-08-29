@@ -1,5 +1,4 @@
-import { getMouseEvent } from "..";
-import mock = jest.mock;
+import { getMouseEvent } from "../bin";
 
 describe("FakeMouseEvent", () => {
   test("getMouseEvent", () => {
