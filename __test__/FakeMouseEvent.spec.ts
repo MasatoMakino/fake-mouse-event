@@ -52,4 +52,23 @@ describe("FakeMouseEvent", () => {
     expect(mockCallback).lastReturnedWith(e);
     mockCallback.mockClear();
   });
+
+  test("should be replicable", () => {
+    const eventArgs = {
+      x: 100,
+      y: 105,
+      offsetX: 150,
+      offsetY: 151,
+      pageX: 0,
+      pageY: 2,
+    };
+    const e: any = getMouseEvent("click", eventArgs);
+    const cloneE = new e.constructor(e.type, e);
+    expect(e.x).toBe(cloneE.x);
+    expect(e.y).toBe(cloneE.y);
+    expect(e.offsetX).toBe(cloneE.offsetX);
+    expect(e.offsetY).toBe(cloneE.offsetY);
+    expect(e.pageX).toBe(cloneE.pageX);
+    expect(e.pageY).toBe(cloneE.pageY);
+  });
 });

@@ -15,8 +15,5 @@ export function getMouseEvent(
   values.x ??= 0;
   values.y ??= 0;
 
-  const e: FakeMouseEvent = new FakeMouseEvent(type, values);
-  e.init(values);
-
-  return e;
+  return new FakeMouseEvent(type, values);
 }

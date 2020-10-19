@@ -1,6 +1,6 @@
 import { FakeMouseEventInit } from "./FakeMouseEventInit";
 
-class MouseEventMock extends UIEvent {
+export class FakeMouseEvent extends UIEvent {
   altKey: boolean;
   button: number;
   buttons: number;
@@ -20,9 +20,36 @@ class MouseEventMock extends UIEvent {
   shiftKey: boolean;
   x: number;
   y: number;
+
+  /**
+   * MouseEvent.getModifierState()のモック関数
+   * @see https://developer.mozilla.org/ja/docs/Web/API/MouseEvent/getModifierState
+   * @param keyArg
+   */
   public getModifierState(keyArg: string): boolean {
     return false;
   }
+
+  /**
+   * MouseEvent.initMouseEvent()のモック関数
+   * @see https://developer.mozilla.org/ja/docs/Web/API/MouseEvent/initMouseEvent
+   *
+   * @param typeArg
+   * @param canBubbleArg
+   * @param cancelableArg
+   * @param viewArg
+   * @param detailArg
+   * @param screenXArg
+   * @param screenYArg
+   * @param clientXArg
+   * @param clientYArg
+   * @param ctrlKeyArg
+   * @param altKeyArg
+   * @param shiftKeyArg
+   * @param metaKeyArg
+   * @param buttonArg
+   * @param relatedTargetArg
+   */
   initMouseEvent(
     typeArg: string,
     canBubbleArg: boolean,
@@ -41,11 +68,11 @@ class MouseEventMock extends UIEvent {
     relatedTargetArg: EventTarget | null
   ): void {}
 
-  constructor(type: string, eventInitDict?: EventInit) {
+  constructor(type: string, eventInitDict?: UIEventInit) {
     super(type, eventInitDict);
+    this.init(eventInitDict);
   }
-}
-export class FakeMouseEvent extends MouseEventMock {
+
   init(values: FakeMouseEventInit) {
     this.offsetX = values.offsetX;
     this.offsetY = values.offsetY;
