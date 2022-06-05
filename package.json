@@ -1,5 +1,5 @@
 {
-  "name": "fake-mouse-event",
+  "name": "@masatomakino/fake-mouse-event",
   "version": "0.0.7",
   "description": "Fake mouse event generator with x/y properties for jsdom.",
   "main": "./bin/index.js",
@@ -7,7 +7,10 @@
   "files": [
     "bin"
   ],
-  "repository": "https://MasatoMakino@github.com/MasatoMakino/fake-mouse-event.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://MasatoMakino@github.com/MasatoMakino/fake-mouse-event.git"
+  },
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -22,13 +25,14 @@
     "ts-node": "^10.8.1",
     "typescript": "^4.7.3"
   },
-  "peerDependencies": {
-    "jest": ">=26.4.0 <29.0.0"
-  },
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
     "build": "tsc",
     "start:dev": "tsc -w"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/MasatoMakino/fake-mouse-event/issues"
+  },
+  "homepage": "https://github.com/MasatoMakino/fake-mouse-event#readme"
 }
