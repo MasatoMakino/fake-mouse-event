@@ -30,7 +30,8 @@
     "coverage": "jest --coverage",
     "preversion": "git checkout main && git pull && npm run build && npm test",
     "build": "tsc",
-    "start:dev": "tsc -w"
+    "start:dev": "tsc -w",
+    "prepare": "husky install"
   },
   "bugs": {
     "url": "https://github.com/MasatoMakino/fake-mouse-event/issues"
