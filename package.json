@@ -28,6 +28,7 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
+    "preversion": "git checkout main && git pull && npm run build && npm test",
     "build": "tsc",
     "start:dev": "tsc -w"
   },
