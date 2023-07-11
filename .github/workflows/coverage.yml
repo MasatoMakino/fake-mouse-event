@@ -22,7 +22,7 @@ jobs:
       - name: build binary
         run: npm run build
       - name: Code Climate Coverage Action
-        uses: paambaati/codeclimate-action@v4.0.0
+        uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: e358e4973a0cb64ecbfda6a9faa0edf1086599bba6ef9f35b14598de80de9ece
         with:
