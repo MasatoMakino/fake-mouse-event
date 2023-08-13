@@ -1,4 +1,4 @@
-import { getMouseEvent } from "../bin";
+import { getMouseEvent } from "../src";
 
 describe("FakeMouseEvent", () => {
   test("getMouseEvent", () => {

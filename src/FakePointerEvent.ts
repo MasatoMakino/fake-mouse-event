@@ -23,7 +23,7 @@ export class FakePointerEvent
 
   protected override init(values: FakePointerEventInit) {
     super.init(values);
-    this.pointerId = values.pointerId ?? 0;
+    this.pointerId = values.pointerId;
     this.width = values.width;
     this.height = values.height;
     this.pressure = values.pressure;
