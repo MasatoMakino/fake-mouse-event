@@ -1,8 +1,8 @@
-import { FakeMouseEventInit } from "./FakeMouseEventInit";
+import { ButtonType, FakeMouseEventInit } from "./FakeMouseEventInit";
 
-export class FakeMouseEvent extends UIEvent {
+export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
   altKey: boolean;
-  button: number;
+  button: ButtonType;
   buttons: number;
   clientX: number;
   clientY: number;
@@ -33,6 +33,7 @@ export class FakeMouseEvent extends UIEvent {
   /**
    * MouseEvent.initMouseEvent()のモック関数
    * @see https://developer.mozilla.org/ja/docs/Web/API/MouseEvent/initMouseEvent
+   * @deprecated
    *
    * @param typeArg
    * @param canBubbleArg
@@ -65,20 +66,11 @@ export class FakeMouseEvent extends UIEvent {
     shiftKeyArg: boolean,
     metaKeyArg: boolean,
     buttonArg: number,
-    relatedTargetArg: EventTarget | null
+    relatedTargetArg: EventTarget | null,
   ): void {}
 
-  constructor(type: string, eventInitDict?: UIEventInit) {
+  constructor(type: string, eventInitDict?: FakeMouseEventInit) {
     super(type, eventInitDict);
-    this.init(eventInitDict);
-  }
-
-  init(values: FakeMouseEventInit) {
-    this.offsetX = values.offsetX;
-    this.offsetY = values.offsetY;
-    this.pageX = values.pageX;
-    this.pageY = values.pageY;
-    this.x = values.x;
-    this.y = values.y;
+    Object.assign(this, eventInitDict);
   }
 }

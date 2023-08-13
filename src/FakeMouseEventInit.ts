@@ -1,7 +1,5 @@
-export interface FakeMouseEventInit {
-  bubbles?: boolean;
-  cancelable?: boolean;
-  composed?: boolean;
+export type ButtonType = 0 | 1 | 2 | 3 | 4;
+export interface FakeMouseEventInit extends UIEventInit {
   altKey?: boolean;
   button?: 0 | 1 | 2 | 3 | 4;
   buttons?: number;
