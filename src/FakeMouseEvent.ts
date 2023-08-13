@@ -71,6 +71,15 @@ export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
 
   constructor(type: string, eventInitDict?: FakeMouseEventInit) {
     super(type, eventInitDict);
-    Object.assign(this, eventInitDict);
+    this.init(eventInitDict);
+  }
+
+  protected init(values: FakeMouseEventInit) {
+    this.offsetX = values.offsetX;
+    this.offsetY = values.offsetY;
+    this.pageX = values.pageX;
+    this.pageY = values.pageY;
+    this.x = values.x;
+    this.y = values.y;
   }
 }
