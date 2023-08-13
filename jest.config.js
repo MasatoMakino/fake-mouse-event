@@ -1,7 +1,7 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "jsdom",
-  collectCoverageFrom: ["**/bin/**/*.js"],
+  collectCoverageFrom: ["./src/**/*.ts"],
   transform: {
     "\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.test.json" }],
   },

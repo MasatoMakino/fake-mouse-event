@@ -1,7 +1,7 @@
 export type ButtonType = 0 | 1 | 2 | 3 | 4;
 export interface FakeMouseEventInit extends UIEventInit {
   altKey?: boolean;
-  button?: 0 | 1 | 2 | 3 | 4;
+  button?: ButtonType;
   buttons?: number;
   clientX?: number;
   clientY?: number;
