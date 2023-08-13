@@ -28,6 +28,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "preversion": "git checkout main && git pull && npm ci && npm run build && npm test",
+    "postversion": "git add package.json package-lock.json && git checkout -b version/$(git describe --tags --abbrev=0)",
     "build": "tsc",
     "start:dev": "tsc -w",
     "prepare": "husky install"
