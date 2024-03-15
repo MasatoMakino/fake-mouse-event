@@ -17,6 +17,8 @@ export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
   relatedTarget: EventTarget | null;
   screenX: number;
   screenY: number;
+  layerX: number;
+  layerY: number;
   shiftKey: boolean;
   x: number;
   y: number;
@@ -81,5 +83,9 @@ export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
     this.pageY = values.pageY;
     this.x = values.x;
     this.y = values.y;
+    this.layerX = values.layerX;
+    this.layerY = values.layerY;
+    this.clientX = values.clientX;
+    this.clientY = values.clientY;
   }
 }

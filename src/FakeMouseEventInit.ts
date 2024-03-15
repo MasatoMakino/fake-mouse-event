@@ -15,6 +15,8 @@ export interface FakeMouseEventInit extends UIEventInit {
   pageY?: number;
   screenX?: number;
   screenY?: number;
+  layerX?: number;
+  layerY?: number;
   shiftKey?: boolean;
   x?: number;
   y?: number;
