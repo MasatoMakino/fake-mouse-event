@@ -32,7 +32,7 @@ describe("FakePointerEvent", () => {
       y: 105,
       offsetX: 150,
       offsetY: 155,
-      pointerId: 1,
+      pointerId: 100,
       pageX: 0,
       pageY: 5,
     };
@@ -47,6 +47,7 @@ describe("FakePointerEvent", () => {
     expect(mockCallback).toBeCalledTimes(1);
     expect(mockCallback).toHaveBeenLastCalledWith(e);
     expect(mockCallback).lastReturnedWith(e);
+    expect(mockCallback.mock.calls[0][0].pointerId).toBe(eventArgs.pointerId);
     mockCallback.mockClear();
   });
 });
