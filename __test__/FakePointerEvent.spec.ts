@@ -45,9 +45,9 @@ describe("FakePointerEvent", () => {
     canvas.addEventListener("pointerdown", mockCallback);
 
     canvas.dispatchEvent(e);
-    expect(mockCallback).toBeCalledTimes(1);
+    expect(mockCallback).toHaveBeenCalledTimes(1);
     expect(mockCallback).toHaveBeenLastCalledWith(e);
-    expect(mockCallback).lastReturnedWith(e);
+    expect(mockCallback).toHaveLastReturnedWith(e);
     expect(mockCallback.mock.calls[0][0].pointerId).toBe(eventArgs.pointerId);
     mockCallback.mockClear();
   });

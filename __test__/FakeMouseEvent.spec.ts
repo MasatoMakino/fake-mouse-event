@@ -48,9 +48,9 @@ describe("FakeMouseEvent", () => {
     canvas.addEventListener("click", mockCallback);
 
     canvas.dispatchEvent(e);
-    expect(mockCallback).toBeCalledTimes(1);
+    expect(mockCallback).toHaveBeenCalledTimes(1);
     expect(mockCallback).toHaveBeenLastCalledWith(e);
-    expect(mockCallback).lastReturnedWith(e);
+    expect(mockCallback).toHaveLastReturnedWith(e);
     mockCallback.mockClear();
   });
 
