@@ -1,6 +1,6 @@
 {
   "name": "@masatomakino/fake-mouse-event",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fake mouse event generator with x/y properties for jsdom.",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
