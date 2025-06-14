@@ -1,3 +1,4 @@
+import { describe, test, expect, vi } from "vitest";
 import { getPointerEvent, FakePointerEvent } from "../src";
 
 describe("FakePointerEvent", () => {
@@ -37,7 +38,7 @@ describe("FakePointerEvent", () => {
       pageY: 5,
     };
     const e = getPointerEvent("pointerdown", { ...eventArgs });
-    const mockCallback = jest.fn((e) => e);
+    const mockCallback = vi.fn((e) => e);
     const canvas = document.createElement("canvas");
     canvas.width = 640;
     canvas.height = 480;
