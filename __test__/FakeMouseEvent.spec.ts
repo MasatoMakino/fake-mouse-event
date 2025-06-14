@@ -1,3 +1,4 @@
+import { describe, test, expect, vi } from "vitest";
 import { getMouseEvent } from "../src";
 
 describe("FakeMouseEvent", () => {
@@ -40,16 +41,16 @@ describe("FakeMouseEvent", () => {
       pageY: 0,
     };
     const e = getMouseEvent("click", { ...eventArgs });
-    const mockCallback = jest.fn((e) => e);
+    const mockCallback = vi.fn((e) => e);
     const canvas = document.createElement("canvas");
     canvas.width = 640;
     canvas.height = 480;
     canvas.addEventListener("click", mockCallback);
 
     canvas.dispatchEvent(e);
-    expect(mockCallback).toBeCalledTimes(1);
+    expect(mockCallback).toHaveBeenCalledTimes(1);
     expect(mockCallback).toHaveBeenLastCalledWith(e);
-    expect(mockCallback).lastReturnedWith(e);
+    expect(mockCallback).toHaveLastReturnedWith(e);
     mockCallback.mockClear();
   });
 
