@@ -1,4 +1,4 @@
-import { ButtonType, FakeMouseEventInit } from "./FakeMouseEventInit";
+import type { ButtonType, FakeMouseEventInit } from "./FakeMouseEventInit";
 
 export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
   altKey: boolean;
@@ -28,7 +28,7 @@ export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
    * @see https://developer.mozilla.org/ja/docs/Web/API/MouseEvent/getModifierState
    * @param keyArg
    */
-  public getModifierState(keyArg: string): boolean {
+  public getModifierState(_keyArg: string): boolean {
     return false;
   }
 
@@ -37,38 +37,38 @@ export class FakeMouseEvent extends UIEvent implements FakeMouseEventInit {
    * @see https://developer.mozilla.org/ja/docs/Web/API/MouseEvent/initMouseEvent
    * @deprecated
    *
-   * @param typeArg
-   * @param canBubbleArg
-   * @param cancelableArg
-   * @param viewArg
-   * @param detailArg
-   * @param screenXArg
-   * @param screenYArg
-   * @param clientXArg
-   * @param clientYArg
-   * @param ctrlKeyArg
-   * @param altKeyArg
-   * @param shiftKeyArg
-   * @param metaKeyArg
-   * @param buttonArg
-   * @param relatedTargetArg
+   * @param _typeArg
+   * @param _canBubbleArg
+   * @param _cancelableArg
+   * @param _viewArg
+   * @param _detailArg
+   * @param _screenXArg
+   * @param _screenYArg
+   * @param _clientXArg
+   * @param _clientYArg
+   * @param _ctrlKeyArg
+   * @param _altKeyArg
+   * @param _shiftKeyArg
+   * @param _metaKeyArg
+   * @param _buttonArg
+   * @param _relatedTargetArg
    */
   initMouseEvent(
-    typeArg: string,
-    canBubbleArg: boolean,
-    cancelableArg: boolean,
-    viewArg: Window,
-    detailArg: number,
-    screenXArg: number,
-    screenYArg: number,
-    clientXArg: number,
-    clientYArg: number,
-    ctrlKeyArg: boolean,
-    altKeyArg: boolean,
-    shiftKeyArg: boolean,
-    metaKeyArg: boolean,
-    buttonArg: number,
-    relatedTargetArg: EventTarget | null,
+    _typeArg: string,
+    _canBubbleArg: boolean,
+    _cancelableArg: boolean,
+    _viewArg: Window,
+    _detailArg: number,
+    _screenXArg: number,
+    _screenYArg: number,
+    _clientXArg: number,
+    _clientYArg: number,
+    _ctrlKeyArg: boolean,
+    _altKeyArg: boolean,
+    _shiftKeyArg: boolean,
+    _metaKeyArg: boolean,
+    _buttonArg: number,
+    _relatedTargetArg: EventTarget | null,
   ): void {}
 
   constructor(type: string, eventInitDict?: FakeMouseEventInit) {

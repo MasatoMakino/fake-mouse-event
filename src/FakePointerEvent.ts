@@ -1,5 +1,5 @@
 import { FakeMouseEvent } from "./FakeMouseEvent";
-import { FakePointerEventInit } from "./FakePointerEventInit";
+import type { FakePointerEventInit } from "./FakePointerEventInit";
 
 export class FakePointerEvent
   extends FakeMouseEvent

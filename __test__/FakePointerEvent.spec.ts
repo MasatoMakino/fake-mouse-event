@@ -1,5 +1,5 @@
-import { describe, test, expect, vi } from "vitest";
-import { getPointerEvent, FakePointerEvent } from "../src";
+import { describe, expect, test, vi } from "vitest";
+import { type FakePointerEvent, getPointerEvent } from "../src";
 
 describe("FakePointerEvent", () => {
   test("constructor", () => {
