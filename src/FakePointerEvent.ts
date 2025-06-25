@@ -1,27 +1,27 @@
 import { FakeMouseEvent } from "./FakeMouseEvent";
-import { FakePointerEventInit } from "./FakePointerEventInit";
+import type { FakePointerEventInit } from "./FakePointerEventInit";
 
 export class FakePointerEvent
   extends FakeMouseEvent
   implements FakePointerEventInit
 {
-  pointerId: number;
-  width?: number;
-  height?: number;
-  pressure?: number;
-  tangentialPressure?: number;
-  tiltX?: number;
-  tiltY?: number;
-  twist?: number;
-  pointerType?: string;
-  isPrimary?: boolean;
+  pointerId: number = 0;
+  width?: number = 0;
+  height?: number = 0;
+  pressure?: number = 0;
+  tangentialPressure?: number = 0;
+  tiltX?: number = 0;
+  tiltY?: number = 0;
+  twist?: number = 0;
+  pointerType?: string = "";
+  isPrimary?: boolean = false;
 
   constructor(type: string, values?: FakePointerEventInit) {
     super(type, values);
     this.init(values);
   }
 
-  protected override init(values: FakePointerEventInit) {
+  protected override init(values: FakePointerEventInit = {}) {
     super.init(values);
     this.pointerId = values.pointerId;
     this.width = values.width;

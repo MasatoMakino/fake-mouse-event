@@ -1,4 +1,4 @@
-import { FakeMouseEventInit } from "./FakeMouseEventInit";
+import type { FakeMouseEventInit } from "./FakeMouseEventInit";
 
 export interface FakePointerEventInit extends FakeMouseEventInit {
   pointerId?: number;

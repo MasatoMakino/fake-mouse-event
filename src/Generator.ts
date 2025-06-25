@@ -1,7 +1,7 @@
 import { FakeMouseEvent } from "./FakeMouseEvent";
-import { FakeMouseEventInit } from "./FakeMouseEventInit";
-import { FakePointerEventInit } from "./FakePointerEventInit";
+import type { FakeMouseEventInit } from "./FakeMouseEventInit";
 import { FakePointerEvent } from "./FakePointerEvent";
+import type { FakePointerEventInit } from "./FakePointerEventInit";
 
 function initMouseEventOptions(values?: FakeMouseEventInit) {
   values ??= {};

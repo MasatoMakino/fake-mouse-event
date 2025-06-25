@@ -14,12 +14,12 @@
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "2.0.5",
     "@masatomakino/release-helper": "^0.2.0",
     "@types/node": "^24.0.0",
     "@vitest/coverage-istanbul": "^3.2.3",
     "husky": "^9.0.10",
     "lint-staged": "^16.1.0",
-    "prettier": "^3.0.1",
     "typescript": "^5.4.2",
     "vitest": "^3.2.3"
   },
@@ -38,6 +38,6 @@
   },
   "homepage": "https://github.com/MasatoMakino/fake-mouse-event#readme",
   "lint-staged": {
-    "*.{js,ts,css,md}": "prettier --write"
+    "*.{js,ts,css,md}": "biome check --write"
   }
 }

@@ -28,4 +28,6 @@ jobs:
     - run: npm ci
     - name: build binary
       run: npm run build
+    - name: Run Biome
+      run: npx biome ci .
     - run: npm test

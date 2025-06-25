@@ -1,5 +1,5 @@
-import { describe, test, expect, vi } from "vitest";
-import { getMouseEvent } from "../src";
+import { describe, expect, test, vi } from "vitest";
+import { FakeMouseEvent, getMouseEvent } from "../src";
 
 describe("FakeMouseEvent", () => {
   test("getMouseEvent", () => {
@@ -63,8 +63,8 @@ describe("FakeMouseEvent", () => {
       pageX: 0,
       pageY: 2,
     };
-    const e: any = getMouseEvent("click", eventArgs);
-    const cloneE = new e.constructor(e.type, e);
+    const e: FakeMouseEvent = getMouseEvent("click", eventArgs);
+    const cloneE = new FakeMouseEvent(e.type, e);
     expect(e.x).toBe(cloneE.x);
     expect(e.y).toBe(cloneE.y);
     expect(e.offsetX).toBe(cloneE.offsetX);
