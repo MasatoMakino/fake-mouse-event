@@ -26,7 +26,7 @@ npx vitest --run __test__/FakeMouseEvent.spec.ts
 
 ## Architecture
 
-```
+```text
 src/
 ├── index.ts              # Barrel export
 ├── FakeMouseEvent.ts     # Core class (extends UIEvent, implements MouseEvent properties)
