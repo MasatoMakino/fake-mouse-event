@@ -18,8 +18,6 @@
     "@masatomakino/release-helper": "^0.2.0",
     "@types/node": "^24.0.0",
     "@vitest/coverage-istanbul": "^3.2.3",
-    "husky": "^9.0.10",
-    "lint-staged": "^16.1.0",
     "typescript": "^5.4.2",
     "vitest": "^3.2.3"
   },
@@ -28,7 +26,8 @@
     "coverage": "vitest --run --coverage",
     "build": "tsc",
     "start:dev": "tsc -w",
-    "prepare": "husky",
+    "pre-commit": "biome format --write --no-errors-on-unmatched --files-ignore-unknown=true",
+    "pre-push": "biome ci . && vitest --run",
     "preversion": "npx @masatomakino/release-helper preversion",
     "postversion": "npx @masatomakino/release-helper postversion",
     "release": "npx @masatomakino/release-helper release"
@@ -36,8 +35,5 @@
   "bugs": {
     "url": "https://github.com/MasatoMakino/fake-mouse-event/issues"
   },
-  "homepage": "https://github.com/MasatoMakino/fake-mouse-event#readme",
-  "lint-staged": {
-    "*.{js,ts,css,md}": "biome format --write --no-errors-on-unmatched"
-  }
+  "homepage": "https://github.com/MasatoMakino/fake-mouse-event#readme"
 }
