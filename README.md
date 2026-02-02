@@ -91,4 +91,4 @@ Extends `FakeMouseEventInit`. Additional properties:
 
 ## License
 
-MIT
+[MIT](LICENSE)
