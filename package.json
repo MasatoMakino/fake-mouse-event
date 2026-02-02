@@ -15,7 +15,6 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
-    "@masatomakino/release-helper": "^0.2.0",
     "@types/node": "^24.0.0",
     "@vitest/coverage-istanbul": "^3.2.3",
     "jsdom": "^27.4.0",
@@ -28,10 +27,7 @@
     "build": "tsc",
     "start:dev": "tsc -w",
     "pre-commit": "biome format --write --no-errors-on-unmatched --files-ignore-unknown=true",
-    "pre-push": "biome ci . && vitest --run",
-    "preversion": "npx @masatomakino/release-helper preversion",
-    "postversion": "npx @masatomakino/release-helper postversion",
-    "release": "npx @masatomakino/release-helper release"
+    "pre-push": "biome ci . && vitest --run"
   },
   "bugs": {
     "url": "https://github.com/MasatoMakino/fake-mouse-event/issues"
