@@ -10,18 +10,20 @@ Published as `@masatomakino/fake-mouse-event` on npm.
 
 ## Commands
 
+All npm commands run inside DevContainer for supply chain protection:
+
 ```bash
-npm run build          # TypeScript compilation (src/ → bin/)
-npm test               # Run tests with Vitest (jsdom environment)
-npm run coverage       # Run tests with Istanbul coverage
-npx biome ci .         # Lint + format check (CI mode)
-npx biome format --write .  # Auto-format files
-npx biome check --write .   # Auto-fix lint issues
+devcontainer exec --workspace-folder . npm run build          # TypeScript compilation (src/ → bin/)
+devcontainer exec --workspace-folder . npm test               # Run tests with Vitest (jsdom environment)
+devcontainer exec --workspace-folder . npm run coverage       # Run tests with Istanbul coverage
+devcontainer exec --workspace-folder . npx biome ci .         # Lint + format check (CI mode)
+devcontainer exec --workspace-folder . npx biome format --write .  # Auto-format files
+devcontainer exec --workspace-folder . npx biome check --write .   # Auto-fix lint issues
 ```
 
 Run a single test file:
 ```bash
-npx vitest --run __test__/FakeMouseEvent.spec.ts
+devcontainer exec --workspace-folder . npx vitest --run __test__/FakeMouseEvent.spec.ts
 ```
 
 ## Architecture
@@ -45,5 +47,6 @@ The classes extend `UIEvent` (not `MouseEvent`) because jsdom's `MouseEvent` con
 ## CI
 
 - Tested on Node 20.x and 22.x
-- Pre-push hook runs `biome ci .` and `npm test`
+- Local development uses DevContainer for npm isolation (supply chain protection)
+- Git hooks run biome and tests via DevContainer
 - NPM publishing uses Trusted Publisher (OIDC), triggered by GitHub Release
