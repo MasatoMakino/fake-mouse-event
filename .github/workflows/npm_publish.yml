@@ -20,6 +20,7 @@ jobs:
       - name: Upgrade npm to v11.6.0
         run: npm install -g npm@11.6.0
       - run: npm ci
+      - run: npm audit --omit=dev --audit-level=high
       - run: npm run build
       - run: npm test
       - name: Publish package on NPM 📦
