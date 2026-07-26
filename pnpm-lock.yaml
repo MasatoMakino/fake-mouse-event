@@ -23,6 +23,9 @@ importers:
       typescript:
         specifier: ^5.4.2
         version: 5.9.3
+      vitest:
+        specifier: 4.0.18
+        version: 4.0.18(@types/node@25.4.0)(jsdom@28.1.0)
 
 packages:
 
