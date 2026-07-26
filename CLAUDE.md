@@ -10,20 +10,20 @@ Published as `@masatomakino/fake-mouse-event` on npm.
 
 ## Commands
 
-All npm commands run inside DevContainer for supply chain protection:
+All package manager commands run inside DevContainer for supply chain protection:
 
 ```bash
-devcontainer exec --workspace-folder . npm run build          # TypeScript compilation (src/ → bin/)
-devcontainer exec --workspace-folder . npm test               # Run tests with Vitest (jsdom environment)
-devcontainer exec --workspace-folder . npm run coverage       # Run tests with Istanbul coverage
-devcontainer exec --workspace-folder . npx biome ci .         # Lint + format check (CI mode)
-devcontainer exec --workspace-folder . npx biome format --write .  # Auto-format files
-devcontainer exec --workspace-folder . npx biome check --write .   # Auto-fix lint issues
+devcontainer exec --workspace-folder . pnpm run build          # TypeScript compilation (src/ → bin/)
+devcontainer exec --workspace-folder . pnpm test               # Run tests with Vitest (jsdom environment)
+devcontainer exec --workspace-folder . pnpm run coverage       # Run tests with Istanbul coverage
+devcontainer exec --workspace-folder . pnpm exec biome ci .    # Lint + format check (CI mode)
+devcontainer exec --workspace-folder . pnpm exec biome format --write .  # Auto-format files
+devcontainer exec --workspace-folder . pnpm exec biome check --write .   # Auto-fix lint issues
 ```
 
 Run a single test file:
 ```bash
-devcontainer exec --workspace-folder . npx vitest --run __test__/FakeMouseEvent.spec.ts
+devcontainer exec --workspace-folder . pnpm exec vitest --run __test__/FakeMouseEvent.spec.ts
 ```
 
 ## Architecture
@@ -47,6 +47,6 @@ The classes extend `UIEvent` (not `MouseEvent`) because jsdom's `MouseEvent` con
 ## CI
 
 - Tested on Node 20.x and 22.x
-- Local development uses DevContainer for npm isolation (supply chain protection)
+- Local development uses DevContainer for pnpm isolation (supply chain protection)
 - Git hooks run biome and tests via DevContainer
 - NPM publishing uses Trusted Publisher (OIDC), triggered by GitHub Release

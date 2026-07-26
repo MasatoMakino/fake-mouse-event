@@ -41,6 +41,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# pnpm content-addressable store (created in project root when using bind-mounted DevContainers)
+.pnpm-store/
+
 # TypeScript v1 declaration files
 typings/
 
