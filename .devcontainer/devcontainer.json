@@ -1,17 +1,18 @@
 {
-  "name": "${localWorkspaceFolderBasename} npm Runner",
-  "image": "node:22-bookworm-slim",
+  "name": "${localWorkspaceFolderBasename} pnpm Runner",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
   "remoteUser": "node",
   "runArgs": [
     "--cap-drop=ALL",
-    "--name=${localWorkspaceFolderBasename}-npm-runner"
+    "--name=${localWorkspaceFolderBasename}-pnpm-runner"
   ],
-  "postCreateCommand": "npm ci",
-  "postStartCommand": "npm audit --audit-level=moderate || true",
+  "postCreateCommand": "pnpm install --frozen-lockfile",
+  "postStartCommand": "pnpm audit --audit-level=moderate || true",
   "containerEnv": {
-    "NODE_ENV": "development",
-    "NPM_CONFIG_AUDIT": "true"
+    "NODE_ENV": "development"
   }
 }
