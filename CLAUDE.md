@@ -46,7 +46,7 @@ The classes extend `UIEvent` (not `MouseEvent`) because jsdom's `MouseEvent` con
 
 ## CI
 
-- Tested on Node 20.x and 22.x
+- Tested on Node 22.x, 24.x, and 26.x
 - Local development uses DevContainer for pnpm isolation (supply chain protection)
 - Git hooks run biome and tests via DevContainer
 - NPM publishing uses Trusted Publisher (OIDC), triggered by GitHub Release
