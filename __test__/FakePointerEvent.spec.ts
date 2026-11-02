@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from "vitest";
-import { type FakePointerEvent, getPointerEvent } from "../src";
+import { FakePointerEvent, getPointerEvent } from "../src";
 
 describe("FakePointerEvent", () => {
   test("constructor", () => {
@@ -7,6 +7,33 @@ describe("FakePointerEvent", () => {
     expect(e).toBeTruthy();
     expect(e.x).toBe(0);
     expect(e.pointerId).toBe(0);
+  });
+
+  test("constructor without an init dictionary matches the defaults of the jsdom PointerEvent", () => {
+    const fake = new FakePointerEvent("pointerdown");
+    const native = new PointerEvent("pointerdown");
+    // tiltX and tiltY are excluded: jsdom leaves them undefined, and the spec requires 0 when the hardware does not report tilt.
+    const keys = [
+      "pointerId",
+      "width",
+      "height",
+      "pressure",
+      "tangentialPressure",
+      "twist",
+      "pointerType",
+      "isPrimary",
+    ] as const;
+    for (const key of keys) {
+      expect(fake[key], key).toBe(native[key]);
+    }
+  });
+
+  test("getPointerEvent defaults match the primary mouse pointer of a browser", () => {
+    const e = getPointerEvent("pointerdown");
+    expect(e.width).toBe(1);
+    expect(e.height).toBe(1);
+    expect(e.pointerType).toBe("mouse");
+    expect(e.isPrimary).toBe(true);
   });
 
   test("Constructor options should be respected", () => {

@@ -19,8 +19,8 @@ function initMouseEventOptions(values?: FakeMouseEventInit) {
 function initPointerEventOptions(values?: FakePointerEventInit) {
   const mouseEventOptions: FakePointerEventInit = initMouseEventOptions(values);
   mouseEventOptions.pointerId ??= 0;
-  mouseEventOptions.width ??= 0;
-  mouseEventOptions.height ??= 0;
+  mouseEventOptions.width ??= 1;
+  mouseEventOptions.height ??= 1;
   mouseEventOptions.pressure ??= 0;
   mouseEventOptions.tangentialPressure ??= 0;
   mouseEventOptions.tiltX ??= 0;
