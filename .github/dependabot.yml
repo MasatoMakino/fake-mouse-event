@@ -18,3 +18,8 @@ updates:
       interval: "daily"
     cooldown:
       default-days: 7
+    groups:
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
