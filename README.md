@@ -76,12 +76,12 @@ Additional defaults: `pointerId: 0`, `pointerType: "mouse"`, `isPrimary: true`.
 
 Extends [`UIEventInit`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/UIEvent#options). Key properties:
 
-| Category | Properties |
-| --- | --- |
+| Category    | Properties                                                                                   |
+| ----------- | -------------------------------------------------------------------------------------------- |
 | Coordinates | `x`, `y`, `clientX`, `clientY`, `screenX`, `screenY`, `offsetX`, `offsetY`, `pageX`, `pageY` |
-| Modifiers | `altKey`, `ctrlKey`, `shiftKey`, `metaKey` |
-| Button | `button`, `buttons` |
-| Movement | `movementX`, `movementY` |
+| Modifiers   | `altKey`, `ctrlKey`, `shiftKey`, `metaKey`                                                   |
+| Button      | `button`, `buttons`                                                                          |
+| Movement    | `movementX`, `movementY`                                                                     |
 
 ### `FakePointerEventInit`
 
