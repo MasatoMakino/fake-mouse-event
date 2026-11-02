@@ -6,15 +6,15 @@ export class FakePointerEvent
   implements FakePointerEventInit
 {
   pointerId: number = 0;
-  width?: number = 0;
-  height?: number = 0;
-  pressure?: number = 0;
-  tangentialPressure?: number = 0;
-  tiltX?: number = 0;
-  tiltY?: number = 0;
-  twist?: number = 0;
-  pointerType?: string = "";
-  isPrimary?: boolean = false;
+  width: number = 1;
+  height: number = 1;
+  pressure: number = 0;
+  tangentialPressure: number = 0;
+  tiltX: number = 0;
+  tiltY: number = 0;
+  twist: number = 0;
+  pointerType: string = "";
+  isPrimary: boolean = false;
 
   constructor(type: string, values?: FakePointerEventInit) {
     super(type, values);
@@ -23,15 +23,15 @@ export class FakePointerEvent
 
   protected override init(values: FakePointerEventInit = {}) {
     super.init(values);
-    this.pointerId = values.pointerId;
-    this.width = values.width;
-    this.height = values.height;
-    this.pressure = values.pressure;
-    this.tangentialPressure = values.tangentialPressure;
-    this.tiltX = values.tiltX;
-    this.tiltY = values.tiltY;
-    this.twist = values.twist;
-    this.pointerType = values.pointerType;
-    this.isPrimary = values.isPrimary;
+    this.pointerId = values.pointerId ?? 0;
+    this.width = values.width ?? 1;
+    this.height = values.height ?? 1;
+    this.pressure = values.pressure ?? 0;
+    this.tangentialPressure = values.tangentialPressure ?? 0;
+    this.tiltX = values.tiltX ?? 0;
+    this.tiltY = values.tiltY ?? 0;
+    this.twist = values.twist ?? 0;
+    this.pointerType = values.pointerType ?? "";
+    this.isPrimary = values.isPrimary ?? false;
   }
 }

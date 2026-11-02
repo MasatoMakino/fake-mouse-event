@@ -8,6 +8,10 @@ describe("FakeMouseEvent", () => {
     expect(e.x).toBe(0);
   });
 
+  test("constructor without an init dictionary does not throw", () => {
+    expect(() => new FakeMouseEvent("click")).not.toThrow();
+  });
+
   test("getMouseEvent with option", () => {
     const e = getMouseEvent("click", {
       x: 100,
