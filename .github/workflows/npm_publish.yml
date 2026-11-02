@@ -62,6 +62,8 @@ jobs:
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "26"
+          # A workflow that mints an OIDC token restores no cache.
+          package-manager-cache: false
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -105,6 +107,7 @@ jobs:
           # Node 26 bundles npm 11.20+, which meets the npm 11.15.0+ requirement of staged publishing.
           node-version: "26"
           registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false
 
       - name: Stage package on npm
         run: npm stage publish ./*.tgz --provenance --access public
